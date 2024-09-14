@@ -2,7 +2,7 @@ import openai
 import pandas as pd
 import csv
 
-openai.api_key = "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"
+openai.api_key = ""
 
 chapter_dataset = pd.read_csv("Resources/FundamentalsOfHydrology_Chapters.csv")
 
