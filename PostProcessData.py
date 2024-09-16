@@ -70,16 +70,9 @@ def generate_qa(text, question_dataset):
     return response.choices[0].message.content
 
 
-#for question in enumerate(test["Question"]):
-#    if check_qa(question) == 'Yes.':
-#        rows_to_drop = test[test["Question"] == question].index
-#        print(f"TEST: ----- YES {question} --- {rows_to_drop}")
-#        test = test.drop(rows_to_drop)
+for question in test["Question"]:
+    if check_qa(question) == 'Yes.':
+        rows_to_drop = test[test["Question"] == question].index
+        print(f"TEST: ----- YES {question} --- {rows_to_drop}")
+        test = test.drop(rows_to_drop)
 
-#print(text)
-
-#test.to_csv('updated_dataset.csv', index=False)
-
-print(test[test['Question'] == "When was the Nashua River Clean-Up Committee established to restore water quality?"].index)
-
-#print(generate_qa(chapter_text["Text"][0], question_dataset))
