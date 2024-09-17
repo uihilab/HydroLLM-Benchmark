@@ -4,9 +4,10 @@ import csv
 
 openai.api_key = ""
 
-question_dataset = pd.read_csv("/Users/dilarakizilkaya/Desktop/HydroQA/dataset_1.csv")
-chapter_text = pd.read_csv("Resources/FundamentalsOfHydrology_Chapters.csv")
-test = pd.read_csv("/Users/dilarakizilkaya/Desktop/HydroQA/dataset_old.csv")
+questions_path = ""
+question_dataset = pd.read_csv("")
+chapter_text = pd.read_csv("")
+test = pd.read_csv("")
 
 #Question check
 def check_qa(question):
@@ -29,7 +30,7 @@ def check_qa(question):
 #To replace the old  question with a new one
 def generate_qa(text, question_dataset):
     prompt = f"""
-    Generate 1 question based on the overall content of the following text:
+    Generate a question based on the overall content of the following text which should also different than the questions in {question_dataset}:
 
     {text}
 
@@ -41,19 +42,17 @@ def generate_qa(text, question_dataset):
 
     The format must be as follows for the question:
 
-    Question:
-    A)
-    B)
-    C)
+    Question: <Question sentence>
+    A) <Answer A>
+    B) <Answer B>
+    C) <Answer C> 
     Answer: <copy-paste the exact correct answer sentence from A, B, or C>
-    Open Answer:
-    Context:    
+    Open Answer: <Open Answer>
+    Context: <Context>
 
     Always give the the Question, A), B), C), Answer, Open Answer and Context in different lines. Do not write them in the same line. 
 
-    Only provide the needed results next to each format category. Do not give it in a new line.
-
-    The question should be different than the questions in the dataset {question_dataset}
+    Do not provide the category results in different lines, always provide them next to each format category. 
 
     """
 
@@ -70,9 +69,69 @@ def generate_qa(text, question_dataset):
     return response.choices[0].message.content
 
 
-for question in test["Question"]:
-    if check_qa(question) == 'Yes.':
-        rows_to_drop = test[test["Question"] == question].index
-        print(f"TEST: ----- YES {question} --- {rows_to_drop}")
-        test = test.drop(rows_to_drop)
 
+for question in question_dataset["Question"]:
+    if check_qa(question) == 'Yes.':
+        rows_to_drop = question_dataset[question_dataset["Question"] == question].index
+        print(f"TEST: ----- YES {question} --- {rows_to_drop}")
+        question_dataset = question_dataset.drop(rows_to_drop)
+
+        generated_q = generate_qa(chapter_text["Text"][3], question_dataset)
+
+        split = generated_q.split("\n")
+
+        current_answers = []
+        results = [None] * 6  
+        
+        for i in split:
+
+            if i.startswith("Question:"):
+                question = i.replace("Question: ", "").strip()
+                current_answers = []
+
+            elif i.startswith("A)") or i.startswith("B)") or i.startswith("C)"):
+                current_answers.append(i.strip())
+
+            elif i.startswith("Answer:"):
+
+                if i.startswith("Answer: A"):
+                    letter = "A"
+                elif i.startswith("Answer: B"):
+                    letter = "B"
+                elif i.startswith("Answer: C"):
+                    letter = "C"
+
+                correct_answer = i.replace("Correct Answer: ", "").strip()
+
+            elif i.startswith("Open Answer:"):
+                open_answer = i.replace("Open Answer: ", "").strip()
+
+            elif i.startswith("Context:"):
+                context = i.replace("Context: ", "").strip()
+
+        #print(letter)
+
+                all_answers = ", ".join(current_answers)
+
+                results[0] = question
+                results[1] = all_answers
+                results[2] = correct_answer
+                results[3] = letter
+                results[4] = open_answer
+                results[5] = context
+
+                new_data = pd.DataFrame([results], columns=["Question", "Answers", "Correct Answer", "Answer Letter", "Open Ended Answer", "Context"])
+
+                question_dataset = question_dataset._append(new_data, ignore_index=True)
+
+                print("-----------------------")
+                print(split)
+                print("-----------------------")
+                print("New rows added successfully.")
+
+                answers = []
+                current_answers = []
+   
+question_dataset = question_dataset[question_dataset[["Question", "Answers", "Correct Answer", "Answer Letter", "Open Ended Answer", "Context"]].notna().all(axis=1)]
+
+question_dataset.to_csv('output_file.csv', index=False)
