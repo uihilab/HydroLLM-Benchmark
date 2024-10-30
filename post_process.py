@@ -13,7 +13,7 @@ def check_qa(question, answer):
     1. Read the Question and it's Answer: Review the question and it's answer within two triple backticks (```).
     2. Is the question and answer, check if they are numeric or not.
     3. Is the question location or article specific?
-    3. If they are numeric, only return Yes, if not return No.
+    3. If these questions are true, only return Yes, if not return No.
 
     Your only allowed response is Yes or No. Do return other responses other than Yes or No.
 
