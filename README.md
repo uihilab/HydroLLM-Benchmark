@@ -1,36 +1,48 @@
-Benchmarking HydroLLM for Hydrology-Specific Question Generation and Answering
+# HydroQA
 
-This repository contains resources, scripts, and data for benchmarking large language models (LLMs) for hydrology-focused question generation and answering. The project aims to facilitate research and educational applications by developing a domain-specific benchmark dataset and evaluating model performance on hydrology-related tasks.
+**A Specialized Benchmark Dataset for Hydrology-Focused Question-Answering**
 
-Project Overview
+Welcome to **HydroQA**, a repository dedicated to providing a **benchmark dataset** of hydrology-specific question-answer pairs. This dataset, **generated using AI**, is aimed at supporting research in hydrological modeling, machine learning, and data-driven water resource management. Unlike traditional benchmarks that primarily compare model performances, **our focus here is to introduce a dataset** that can help researchers and practitioners evaluate or develop specialized AI models in hydrology.
 
-Objectives
+## Table of Contents
+- [Overview](#overview)
+- [Directory Structure](#directory-structure)
+- [Getting Started](#getting-started)
+- [Datasets](#datasets)
+- [Question Generation](#question-generation)
+- [Dataset Usage](#dataset-usage)
+- [Resources](#resources)
+- [Citation](#citation)
+- [Feedback](#feedback)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
 
-	•	Create a benchmark dataset with various question types (true-false, multiple choice, open-ended, fill-in-the-blank) based on hydrology research articles and textbooks.
-	•	Evaluate the performance of LLMs—both general-purpose and domain-specific models—in generating and answering questions relevant to hydrology.
-	•	Highlight the importance of domain-specific LLMs for specialized fields like hydrology in research and education.
+---
 
-Key Components
+## Overview
+**HydroQA** aims to streamline the development of **domain-specific AI solutions in hydrology** by offering a comprehensive benchmark dataset. Through combining foundational textbook content and a large collection of recent hydrology research articles, we created **True/False, Multiple Choice, Fill in the Blanks,** and **Open-Ended** questions. This dataset serves as a **baseline resource** for evaluating or training AI models in hydrology, rather than providing direct comparisons between different models.
 
-	•	Question Generation: Scripts to generate different types of questions using domain knowledge.
-	•	Data Processing: Includes tools for structuring and organizing hydrology data to make it suitable for LLM-based processing.
-	•	Evaluation Metrics: Measure the accuracy, relevance, and consistency of responses to hydrology-specific questions.
+- **Datasets/**: Hosts CSV files containing the **AI-generated** questions for hydrological content, categorized by both question type and source type (textbook vs. research article).  
+- **GenerateQA/**: Scripts utilized for **automatically generating** the question-answer pairs.  
+- **Model Results/**: Example scripts that demonstrate how one might **evaluate** an AI model using this dataset (these are optional and for illustration).  
+- **Resources/**: Contains hydrological references like the *Fundamentals of Hydrology* PDF used to generate textbook-based Q&A.  
+- **Utility Scripts**: Files (e.g., `ChapterDivider.py`, `post_process.py`) for parsing, data cleaning, or article retrieval.
 
-Repository Structure
+---
 
-	•	Datasets/: Contains benchmark datasets with hydrology questions derived from research materials.
-	•	GenerateQA/: Scripts for generating questions and answers, using domain-specific prompts and techniques.
-	•	Model Results/: Scripts and data for evaluating and recording model performance on the benchmark dataset.
-	•	Resources/: Resources such as hydrology textbooks and research article PDFs, organized by chapters in CSV format.
-	•	ChapterDivider.py: Script for separating each chapter of the textbook or article for targeted question generation.
-	•	PostProcessData.py: Script to check and re-generate data, ensuring consistency and adherence to desired formats.
-	•	getArticleFullText.py: Script to retrieve full-text content from research articles.
-	•	post_process.py: Final post-processing script for data cleaning and validation.
+## Getting Started
+1. **Clone the Repository**  
+   ```bash
+   git clone https://github.com/uihilab/HydroQA.git
+   cd HydroQA
 
+**## Feedback
+We welcome your feedback, suggestions, or any issues you might encounter. Here are a few ways to reach us:
+- **Open an Issue**: Submit a [GitHub issue](../../issues) describing your question or concern.
+- **Pull Requests**: We encourage contributions that enhance the dataset or improve the scripts.
+- **Contact**: Feel free to share ideas or request features through email or our online community.
 
-Results
+## License
 
-The project provides insights into the effectiveness of LLMs in accurately generating and answering hydrology-specific questions. Detailed performance metrics and analysis can be found in the Model Results/ directory.
-
-
-
+## Acknowledgements
+This benchmark dataset was developed by the [University of Iowa Hydroinformatics Lab (UIHI Lab)](https://hydroinformatics.uiowa.edu/). We extend our gratitude to all contributors and community members who have supported this project, helping to foster innovation at the intersection of hydrology and AI.**
