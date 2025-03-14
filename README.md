@@ -1,8 +1,8 @@
-# HydroQA
+# HydroLLM-Benchmark
 
 **A Specialized Benchmark Dataset for Hydrology-Focused Question-Answering**
 
-Welcome to **HydroQA**, a repository dedicated to providing a **benchmark dataset** of hydrology-specific question-answer pairs. This dataset, **generated using AI**, is aimed at supporting research in hydrological modeling, machine learning, and data-driven water resource management. Unlike traditional benchmarks that primarily compare model performances, **our focus here is to introduce a dataset** that can help researchers and practitioners evaluate or develop specialized AI models in hydrology.
+Welcome to **HydroLLM-Benchmark**, a repository dedicated to providing a **benchmark dataset** of hydrology-specific question-answer pairs. This dataset, **generated using AI**, is aimed at supporting research in hydrological modeling, machine learning, and data-driven water resource management. Unlike traditional benchmarks that primarily compare model performances, **our focus here is to introduce a dataset** that can help researchers and practitioners evaluate or develop specialized AI models in hydrology.
 
 ## Table of Contents
 - [Overview](#overview)
@@ -20,7 +20,7 @@ Welcome to **HydroQA**, a repository dedicated to providing a **benchmark datase
 ---
 
 ## Overview
-**HydroQA** aims to streamline the development of **domain-specific AI solutions in hydrology** by offering a comprehensive benchmark dataset. Through combining foundational textbook content and a large collection of recent hydrology research articles, we created **True/False, Multiple Choice, Fill in the Blanks,** and **Open-Ended** questions. This dataset serves as a **baseline resource** for evaluating or training AI models in hydrology, rather than providing direct comparisons between different models.
+**HydroLLM-Benchmark** aims to streamline the development of **domain-specific AI solutions in hydrology** by offering a comprehensive benchmark dataset. Through combining foundational textbook content and a large collection of recent hydrology research articles, we created **True/False, Multiple Choice, Fill in the Blanks,** and **Open-Ended** questions. This dataset serves as a **baseline resource** for evaluating or training AI models in hydrology, rather than providing direct comparisons between different models.
 
 - **Datasets/**: Hosts CSV files containing the **AI-generated** questions for hydrological content, categorized by both question type and source type (textbook vs. research article).  
 - **GenerateQA/**: Scripts utilized for **automatically generating** the question-answer pairs.  
@@ -33,8 +33,8 @@ Welcome to **HydroQA**, a repository dedicated to providing a **benchmark datase
 ## Getting Started
 1. **Clone the Repository**  
    ```bash
-   git clone https://github.com/uihilab/HydroQA.git
-   cd HydroQA
+   git clone https://github.com/uihilab/HydroLLM-Benchmark.git
+   cd HydroLLM-Benchmark
 
 ## Feedback
 We welcome your feedback, suggestions, or any issues you might encounter. Here are a few ways to reach us:
