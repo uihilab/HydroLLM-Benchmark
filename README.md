@@ -6,7 +6,6 @@ Welcome to **HydroLLM-Benchmark**, a repository dedicated to providing a **bench
 
 ## Table of Contents
 - [Overview](#overview)
-- [Directory Structure](#directory-structure)
 - [Getting Started](#getting-started)
 - [Citation](#citation)
 - [Feedback](#feedback)
