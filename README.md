@@ -10,7 +10,6 @@ Welcome to **HydroLLM-Benchmark**, a repository dedicated to providing a **bench
 - [Getting Started](#getting-started)
 - [Datasets](#datasets)
 - [Question Generation](#question-generation)
-- [Dataset Usage](#dataset-usage)
 - [Resources](#resources)
 - [Citation](#citation)
 - [Feedback](#feedback)
