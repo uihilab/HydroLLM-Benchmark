@@ -45,4 +45,4 @@ We welcome your feedback, suggestions, or any issues you might encounter. Here a
 ## License
 
 ## Acknowledgements
-This benchmark dataset was developed by the [University of Iowa Hydroinformatics Lab (UIHI Lab)](https://hydroinformatics.uiowa.edu/). We extend our gratitude to all contributors and community members who have supported this project, helping to foster innovation at the intersection of hydrology and AI.**
+This benchmark dataset was developed by the [University of Iowa Hydroinformatics Lab (UIHI Lab)](https://hydroinformatics.uiowa.edu/). We extend our gratitude to all contributors and community members who have supported this project, helping to foster innovation at the intersection of hydrology and AI.
