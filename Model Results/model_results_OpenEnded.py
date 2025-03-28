@@ -2,10 +2,13 @@ import pandas as pd
 import openai
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
-from secret import OPENAI_API_KEY
 import requests
+import os
 
-openai.api_key = OPENAI_API_KEY 
+api_key = os.getenv("OPENAIAPI")
+openai.api_key = api_key
+
+url = os.getenv("URL")
 
 df = pd.read_csv('')
 
