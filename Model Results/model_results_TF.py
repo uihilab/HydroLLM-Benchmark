@@ -1,11 +1,14 @@
 import openai
-from secret import OPENAI_API_KEY
 from sklearn.metrics import accuracy_score
 import pandas as pd
 import csv
 import requests
+import os
 
-openai.api_key = OPENAI_API_KEY
+api_key = os.getenv("OPENAIAPI")
+openai.api_key = api_key
+
+url = os.getenv("URL")
 
 TF_data = pd.read_csv("")
 
