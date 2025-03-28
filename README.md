@@ -42,3 +42,5 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 
 ## Acknowledgements
 This benchmark dataset was developed by the [University of Iowa Hydroinformatics Lab (UIHI Lab)](https://hydroinformatics.uiowa.edu/). We extend our gratitude to all contributors and community members who have supported this project, helping to foster innovation at the intersection of hydrology and AI.
+
+> Kizilkaya, D., Sajja, R., Sermet, Y., & Demir, I. (2025). Towards HydroLLM: A Benchmark Dataset for Hydrology-Specific Knowledge Assessment for Large Language Models. DOI: https://doi.org/10.31223/X5R410
