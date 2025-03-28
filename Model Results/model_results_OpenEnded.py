@@ -51,7 +51,7 @@ def llama_result(question):
     {"role": "user", "content": prompt},
     ]
 
-    url = "https://r-uihilab01.ecn.uiowa.edu/ollama/api/chat"
+    url = url
 
     data = {
         "model": "llama3.1:70b",
