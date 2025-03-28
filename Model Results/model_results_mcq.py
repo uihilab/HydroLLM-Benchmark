@@ -8,7 +8,7 @@ import requests
 api_key = os.getenv("OPENAIAPI")
 openai.api_key = api_key
 
-url = os.getenv("URL")
+ollama_api = os.getenv("OLLAMA_API")
 
 df = pd.read_csv("")
 
@@ -54,7 +54,7 @@ def llama_result(question, answers):
     {"role": "user", "content": prompt},
     ]
 
-    url = url
+    url = ollama_api
 
     data = {
         "model": "llama3.1:70b",
