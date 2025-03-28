@@ -1,12 +1,14 @@
 import openai
-from secret import OPENAI_API_KEY
 import pandas as pd
 from sklearn.metrics import accuracy_score
 import transformers
 import torch
 import requests
 
-openai.api_key = OPENAI_API_KEY
+api_key = os.getenv("OPENAIAPI")
+openai.api_key = api_key
+
+url = os.getenv("URL")
 
 df = pd.read_csv("")
 
@@ -52,7 +54,7 @@ def llama_result(question, answers):
     {"role": "user", "content": prompt},
     ]
 
-    url = "https://r-uihilab01.ecn.uiowa.edu/ollama/api/chat"
+    url = url
 
     data = {
         "model": "llama3.1:70b",
