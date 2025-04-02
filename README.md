@@ -30,6 +30,10 @@ Welcome to **HydroLLM-Benchmark**, a repository dedicated to providing a **bench
    ```bash
    git clone https://github.com/uihilab/HydroLLM-Benchmark.git
    cd HydroLLM-Benchmark
+2. **Set Environment Variables**
+   ```bash
+   api_key = os.get_env("")
+   ollama_api = os.get_env("")
 
 ## Feedback
 We welcome your feedback, suggestions, or any issues you might encounter. Here are a few ways to reach us:
