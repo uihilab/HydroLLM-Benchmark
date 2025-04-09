@@ -35,6 +35,17 @@ Welcome to **HydroLLM-Benchmark**, a repository dedicated to providing a **bench
    api_key = os.get_env("")
    ollama_api = os.get_env("")
 
+## Results
+
+### Fill In The Blanks Q&A Results
+![Fill In The Blanks Graph](./Result%20Graphs/FillInTheBlanks.png)
+### Multiple Choice Q&A Results
+![Multiple Choice Graph](./Result%20Graphs/MultipleChoice.png)
+### Open Ended Q&A Results
+![Open Ended Graph](./Result%20Graphs/OpenEnded.png)
+### True False Q&A Results
+![True False Graph](./Result%20Graphs/TrueFalse.png)
+
 ## Feedback
 We welcome your feedback, suggestions, or any issues you might encounter. Here are a few ways to reach us:
 - **Open an Issue**: Submit a [GitHub issue](../../issues) describing your question or concern.
